@@ -50,7 +50,7 @@ int main(){
 		}else if (p1[i].exp > p2[j].exp){
 			sum[k].exp = p1[i].exp;
 			sum[k].coef = p1[i].coef;
-			j++;
+			k++;
 			i++;
 		}else{
 			sum[k].exp = p1[i].exp;
