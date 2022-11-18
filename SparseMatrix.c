@@ -22,6 +22,9 @@ int main(){
 			}
 		}
 	}
+
+	int zeroValue = (row * column) - nonZero;
+
 	printf("Entered matrix is \n");
 	for (int i = 0; i < row; i++){
 		for (int j = 0; j < column; j++){
@@ -50,8 +53,10 @@ int main(){
 
 	for (int i = 0; i < z; i++){
 		printf("%d %d %d\n",trip[i].row,trip[i].column,trip[i].value);
-
 	}
+
+	float sparse = (float)zeroValue/(column * row);
+	printf("Sparcity is : %0.2f\n",sparse);
 
 
 
