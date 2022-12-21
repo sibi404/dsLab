@@ -80,7 +80,7 @@ void fast_transpose(sparse a[],  sparse b[])
 void main(){
     int m, n, key;
     sparse a[MAX], b[MAX];
-    printf("\nEnter the no of rows and columns:\t");
+    printf("\nEnter the no of rows and columns: ");
     scanf("%d%d",&m, &n);
     readsparse(a, m, n);
     fast_transpose(a, b);
