@@ -8,10 +8,8 @@ typedef struct{
 
 int main(){
 	int row,column;
-	printf("Enter the number of rows of the matrix ");
-	scanf("%d",&row);
-	printf("Enter the number of columns of the matrix ");
-	scanf("%d",&column);
+	printf("Enter the number of rows and column of the matrix ");
+	scanf("%d %d",&row,&column);
 	int matrix[row][column],nonZero = 0;
 	printf("Enter the elements of matrix \n");
 	for (int i = 0; i < row; i++){
@@ -50,7 +48,7 @@ int main(){
 			}
 		}
 	}
-
+	printf("Sparse representation is\n");
 	for (int i = 0; i < z; i++){
 		printf("%d %d %d\n",trip[i].row,trip[i].column,trip[i].value);
 	}
