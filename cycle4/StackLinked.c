@@ -66,12 +66,5 @@ int main(){
 			printf("Select correct option\n");
 		}
 	}
-	push();
-	push();
-	display();
-	pop();
-	pop();
-	display();
 	return 0;
-
 }
