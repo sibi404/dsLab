@@ -27,7 +27,6 @@ int isAlpha(char a){
 void convertInfixPostfix(char ar[]){
 	int j = 0;
 	for (int i = 0; ar[i] != '\0'; i++){
-		// printf("operator : %c Precedence %d\n",ar[i],operatiorPrecedence(ar[i]));
 		if (isAlpha(ar[i])){
 			result[j++] = ar[i];
 		}else if (ar[i] == '('){
@@ -40,7 +39,6 @@ void convertInfixPostfix(char ar[]){
 		}else{
 			if((top == -1) || (stack[top] == '(') || (operatiorPrecedence(ar[i]) > operatiorPrecedence(stack[top]))){
 				stack[++top] = ar[i];
-				//printf("stack : %d Incomming %d StackTop : %s\n",operatiorPrecedence(stack[top]),operatiorPrecedence(ar[i]),stack);
 			}else{
 				while(stack[top] != '(' && top != -1 && operatiorPrecedence(ar[i]) <= operatiorPrecedence(stack[top])){
 					result[j++] = stack[top--];
