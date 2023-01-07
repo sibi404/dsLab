@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<ctype.h>
 #define MAX_SIZE 20
 char expr[MAX_SIZE],result[MAX_SIZE],stack[MAX_SIZE];
 int top = -1;
@@ -16,8 +17,8 @@ int operatiorPrecedence(char a){
 	}
 }
 
-int isAlpha(char a){
-	if ((a >= 'a' && a <= 'z') || a >= 'A' && a <= 'Z'){
+int isOperant(char a){
+	if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z') || isdigit(a)){
 		return 1;
 	}else{
 		return 0;
@@ -27,7 +28,7 @@ int isAlpha(char a){
 void convertInfixPostfix(char ar[]){
 	int j = 0;
 	for (int i = 0; ar[i] != '\0'; i++){
-		if (isAlpha(ar[i])){
+		if (isOperant(ar[i])){
 			result[j++] = ar[i];
 		}else if (ar[i] == '('){
 			stack[++top] = ar[i];
