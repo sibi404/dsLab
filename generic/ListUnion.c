@@ -85,14 +85,34 @@ Sll createIntersection(Sll *s1,Sll *s2){
 	return result;
 }
 
+void swap(Node *first,Node *second){
+	int temp = first -> data;
+	first -> data = second -> data;
+	second -> data = temp;
+}
+
+void sortList(Sll *list){
+	Node *temp = list -> head;
+	while (temp != NULL){
+		int min = temp -> data;
+		for (Node *i = temp; i != NULL; i = i -> link){
+			if (i -> data < min){
+				swap(i,temp);
+			}
+		}
+		temp = temp -> link;
+	}
+}
+
 int main(){
 	Sll list1,list2,unionList,intersection;
 	list1.head = NULL;
 	list2.head = NULL;
 	//head1 = NULL;
-	insert(&list1,10);
-	insert(&list1,20);
 	insert(&list1,30);
+	insert(&list1,20);
+	insert(&list1,10);
+	insert(&list1,50);
 
 	insert(&list2,40);
 	insert(&list2,30);
@@ -104,5 +124,10 @@ int main(){
 	display(&unionList);
 	printf("intersection list is\n");
 	display(&intersection);
+
+	sortList(&unionList);
+	printf("Sorted unionList is\n");
+	display(&unionList);
+
 	return 0;
 }
